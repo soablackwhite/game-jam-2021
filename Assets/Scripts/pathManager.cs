@@ -32,8 +32,9 @@ public class pathManager : MonoBehaviour {
 	public int corridorSize=20;
 	public bool roomMode=true;
 	bool end=false;
+    int z = 0;
 
-	private float originalProb;
+    private float originalProb;
 	private int originalCorSize, originalRoomSize;
 
 	Vector3 positions;
@@ -82,11 +83,14 @@ public class pathManager : MonoBehaviour {
 //			Destroy my game object; 		// self destruct if I've made enough tiles already
 			bool floorAdded=false;
 			int tries=0;
+            
 			while(!floorAdded && tries<=4){
 				transform.Translate(Vector3.right*movementUnit);
 				if(Physics2D.OverlapPoint(transform.position)==null){
 					GameObject newFloor;
 					newFloor=Instantiate(floorPrefab,transform.position,new Quaternion(0,0,0,0),transform.parent);
+                    newFloor.name = "floor"+z;
+                    z++;
 					positions=positions+transform.position;
 					floorAdded=true;
 				}else{
