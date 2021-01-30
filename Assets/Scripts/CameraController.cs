@@ -12,7 +12,12 @@ public class CameraController : MonoBehaviour
 
 	private static bool cameraExists;
 
-	void Start()
+    void Awake()
+    {
+		followTarget = transform.parent.gameObject;
+    }
+
+    void Start()
 	{
 		if (!cameraExists)
 		{
