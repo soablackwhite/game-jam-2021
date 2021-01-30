@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             movementInput = playerActionControl.secondary.Move.ReadValue<Vector2>();
         }
         
-        Debug.Log(movementInput);
+        //Debug.Log(movementInput);
         // Basic movement input
         // TODO - refactor to be able to choose what keys affect the Input axes
         //float moveHorizontal = Input.GetAxis("Horizontal");

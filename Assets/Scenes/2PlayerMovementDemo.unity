@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8536838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1738072606085958567, guid: 82741d8c10b61354ca73cb39c44d567c, type: 3}
+  m_PrefabInstance: {fileID: 5847051024097344270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &8536845
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017359495, y: 0.052077293}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3106818, y: 1.1486628}
+  m_EdgeRadius: 0
 --- !u!1 &1719420162
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +250,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1866548361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5276593955259291688, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
+  m_PrefabInstance: {fileID: 5304429447544613700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1866548368
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866548361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02957189, y: 0.03379652}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3380771, y: 1.1437476}
+  m_EdgeRadius: 0
 --- !u!1001 &5304429447544613700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -229,6 +291,10 @@ PrefabInstance:
     - target: {fileID: 5276593955259291688, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276593955259291689, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5276593955259291692, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
       propertyPath: m_RootOrder
@@ -338,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 1738072606085958563, guid: 82741d8c10b61354ca73cb39c44d567c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738072606085958566, guid: 82741d8c10b61354ca73cb39c44d567c, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1738072606085958567, guid: 82741d8c10b61354ca73cb39c44d567c, type: 3}
       propertyPath: m_Name
