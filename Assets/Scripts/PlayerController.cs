@@ -11,9 +11,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private TwoPlayerActionControl playerActionControl;
 
+    private Animator anim;
+
     void Awake()
     {
         playerActionControl = new TwoPlayerActionControl();
+
+        anim=GetComponent<Animator>();
     }
 
     void OnEnable()
@@ -56,5 +60,24 @@ public class PlayerController : MonoBehaviour
         // Set the velocity property of our Rigidbody2D rb2d to give our player some movement.
         // Elected to use velocity instead of AddForce because AddForce feels really floaty.
         rb2d.velocity = movementInput * speed;
+
+        //animating the socks
+        if(movementInput.y<0){
+            anim.SetBool("facingForward",true);
+        }else if(movementInput.y>0){
+            anim.SetBool("facingForward",false);
+        }
+
+        if (rb2d.velocity!=Vector2.zero){
+            anim.SetBool("walking",true);
+        }else{
+            anim.SetBool("walking",false);
+        }
+
+        if(movementInput.x>0){
+            GetComponent<SpriteRenderer>().flipX=true;
+        }else if(movementInput.x<0){
+            GetComponent<SpriteRenderer>().flipX=false;
+        }
     }
 }
