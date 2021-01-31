@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - floorTile
-  - pathmaker
   - out
   - sock
+  - pathmaker
+  - obj
   layers:
   - Default
   - TransparentFX

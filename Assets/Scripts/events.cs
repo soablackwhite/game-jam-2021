@@ -13,21 +13,25 @@ public class events : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "sock1" || collision.gameObject.name == "sock2")
+        if (collision.gameObject.tag == "sock")
         {
             sockTouch = true;
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Debug.Log("touched "+collision.gameObject.name);
-        if (collision.gameObject.name == "Square")
+        Debug.Log("touched " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "obj")
         {
             sqTouch = true;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("touched "+collision.gameObject.tag);
+        if (collision.gameObject.tag == "obj")
+        {
+            sqTouch = true;
+        }
+    }
+    private void OnCollisionExit2D(Collider2D collision)
     {
         //Debug.Log("stopped touching "+collision.gameObject.name);
         sqTouch = false;

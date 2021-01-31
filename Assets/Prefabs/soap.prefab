@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2855197822169018794}
   m_Layer: 0
   m_Name: soap
-  m_TagString: Untagged
+  m_TagString: obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
