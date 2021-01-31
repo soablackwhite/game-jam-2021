@@ -49,12 +49,13 @@ MonoBehaviour:
   animationTime: 3
   growthRate: 0.01
   maxSize: 7
-  keys:
-  - <Keyboard>/w
-  - <Keyboard>/s
-  - <Keyboard>/a
-  - <Keyboard>/d
-  - <Keyboard>/upArrow
-  - <Keyboard>/downArrow
-  - <Keyboard>/leftArrow
-  - <Keyboard>/rightArrow
+  playerKeys:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  keySprites: []
