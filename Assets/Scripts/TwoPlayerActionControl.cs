@@ -241,6 +241,7 @@ public class @TwoPlayerActionControl : IInputActionCollection, IDisposable
                 @Move.canceled += instance.OnMove;
             }
         }
+
     }
     public MainActions @main => new MainActions(this);
 

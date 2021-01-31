@@ -1,6 +1,8 @@
-
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private TwoPlayerActionControl playerActionControl;
 
     private Animator anim;
+
 
     void Awake()
     {
@@ -80,4 +83,23 @@ public class PlayerController : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX=false;
         }
     }
+
+    public void RandomizeKeys(string[] keys){
+        print(playerActionControl.secondary.Get().actions[0]);
+        if(PlayerNumber==1){
+            for(int i=1;i<5;i++){
+                playerActionControl.main.Get().actions[0].ApplyBindingOverride(i,keys[i-1]);
+            }
+            print(playerActionControl.main.Get().actions[0]);
+        }else if(PlayerNumber==2){
+            for(int i=1;i<5;i++){
+                playerActionControl.secondary.Get().actions[0].ApplyBindingOverride(i,keys[i+3]);
+            }
+            print(playerActionControl.secondary.Get().actions[0]);
+        }
+        
+        
+    }
+
+
 }
