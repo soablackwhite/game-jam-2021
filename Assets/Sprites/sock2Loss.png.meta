@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: 1d234b3dd5179584db34899fbc3abe6d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3420004861540535323
+    second: sock2Loss_0
+  - first:
+      213: -1530915283228555051
+    second: sock2Loss_1
+  - first:
+      213: 4258723308255603219
+    second: sock2Loss_2
+  - first:
+      213: 913643891145977135
+    second: sock2Loss_3
+  - first:
+      213: -6427382959392827183
+    second: sock2Loss_4
+  - first:
+      213: 9197623748841883704
+    second: sock2Loss_5
+  - first:
+      213: -3415377537267193032
+    second: sock2Loss_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +53,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +62,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +88,31 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -77,7 +122,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sock2Loss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 46
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5039892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c8b363d4c467f20800000000000000
+      internalID: 3420004861540535323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sock2Loss_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 4
+        width: 46
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5039892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d802f939a811cae0800000000000000
+      internalID: -1530915283228555051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sock2Loss_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 4
+        width: 46
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5039892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a604109460a1b30800000000000000
+      internalID: 4258723308255603219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sock2Loss_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 4
+        width: 46
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5039892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d26fe374aedac00800000000000000
+      internalID: 913643891145977135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sock2Loss_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 4
+        width: 46
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5039892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8ddfd80495dc6a0800000000000000
+      internalID: -6427382959392827183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sock2Loss_5
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 4
+        width: 46
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5039892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838ca67811684af70800000000000000
+      internalID: 9197623748841883704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sock2Loss_6
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 4
+        width: 46
+        height: 32
+      alignment: 9
+      pivot: {x: 0.55, y: 0.5039892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b275da9342a90d0800000000000000
+      internalID: -3415377537267193032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

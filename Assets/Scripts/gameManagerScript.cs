@@ -36,6 +36,9 @@ public class gameManagerScript : MonoBehaviour
 
 	public Animator timer;
 
+	public bool victory=false;
+	public GameObject victoryStuff;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,34 +66,37 @@ public class gameManagerScript : MonoBehaviour
     {
     	currentTime=Time.time-startTime;
 
+    	if(!victory){
+	    	if(Time.time>startTime+timeLimit-preWashTime && !CRrunning){
+	    		doingTheWash();
+	    	}
 
-    	if(Time.time>startTime+timeLimit-preWashTime && !CRrunning){
-    		doingTheWash();
-    	}
+	    	for(int i=0;i<8;i++){
+	    		playerKeys[i].color=c;
+	    	}
+	        var keyboard=Keyboard.current;
+	        // if(keyboard.spaceKey.wasPressedThisFrame && !CRrunning) doingTheWash();
+	        // if(keyboard.tKey.wasPressedThisFrame) print("key pressed");
 
-    	for(int i=0;i<8;i++){
-    		playerKeys[i].color=c;
-    	}
-        var keyboard=Keyboard.current;
-        // if(keyboard.spaceKey.wasPressedThisFrame && !CRrunning) doingTheWash();
-        // if(keyboard.tKey.wasPressedThisFrame) print("key pressed");
-
-        for(int i=0;i<8;i++){
-        	print(keys[i]);
-        	if(keys[i].Length>1){
-        		if(keys[i]=="upArrow" && keyboard.upArrowKey.isPressed){
-        			playerKeys[i].color=Color.white;
-        		}else if(keys[i]=="downArrow" && keyboard.downArrowKey.isPressed){
-        			playerKeys[i].color=Color.white;
-        		}else if(keys[i]=="leftArrow" && keyboard.leftArrowKey.isPressed){
-        			playerKeys[i].color=Color.white;
-        		}else if(keys[i]=="rightArrow" && keyboard.rightArrowKey.isPressed){
-        			playerKeys[i].color=Color.white;
-        		}
-        	}else if(keyboard.FindKeyOnCurrentKeyboardLayout(keys[i]).isPressed){
-        		playerKeys[i].color=Color.white;
-        	}
-        }
+	        for(int i=0;i<8;i++){
+	        	print(keys[i]);
+	        	if(keys[i].Length>1){
+	        		if(keys[i]=="upArrow" && keyboard.upArrowKey.isPressed){
+	        			playerKeys[i].color=Color.white;
+	        		}else if(keys[i]=="downArrow" && keyboard.downArrowKey.isPressed){
+	        			playerKeys[i].color=Color.white;
+	        		}else if(keys[i]=="leftArrow" && keyboard.leftArrowKey.isPressed){
+	        			playerKeys[i].color=Color.white;
+	        		}else if(keys[i]=="rightArrow" && keyboard.rightArrowKey.isPressed){
+	        			playerKeys[i].color=Color.white;
+	        		}
+	        	}else if(keyboard.FindKeyOnCurrentKeyboardLayout(keys[i]).isPressed){
+	        		playerKeys[i].color=Color.white;
+	        	}
+	        }
+	   	}else{
+	   		victoryStuff.GetComponent<Animator>().SetBool("victory",true);
+	   	}
     }
 
     void doingTheWash(){
@@ -110,7 +116,11 @@ public class gameManagerScript : MonoBehaviour
     	washImage.enabled=true;
     	rect.localScale=Vector3.zero;
     	var scale=rect.localScale;
-    	for(float i=0f;i<=waitTime*6/6;i+=Time.deltaTime){
+    	sock1.loss=true;
+    	sock2.loss=true;
+    	yield return new WaitForSeconds(waitTime*5/6);
+
+    	for(float i=0f;i<=waitTime*5/6;i+=Time.deltaTime){
     		scale=Vector3.Lerp(rect.localScale,new Vector3(maxSize,maxSize,maxSize),growthRate);
     		rect.localScale=scale;
     		yield return new WaitForSeconds(Time.deltaTime);
@@ -127,7 +137,11 @@ public class gameManagerScript : MonoBehaviour
     	startTime=Time.time;
     	timer.Play("restart");
     	timer.speed=1f;
+    	StartCoroutine(sock1.Shake(1f,shakeMagnitude/10f));
+    	StartCoroutine(sock2.Shake(1f,shakeMagnitude/10f));
     	yield return new WaitForSeconds(1f);
+    	sock1.loss=false;
+    	sock2.loss=false;
     	timer.speed=1/timeLimit;
     	startTime=Time.time;
     }
