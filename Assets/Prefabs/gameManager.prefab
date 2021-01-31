@@ -342,9 +342,11 @@ MonoBehaviour:
   - {fileID: 0}
   keySprites: []
   questionSprite: {fileID: 0}
-  timeLimit: 5
+  timeLimit: 60
   preWashTime: 2
   soundManager: {fileID: 1901121764}
   currentTime: 0
   shakeMagnitude: 0.1
   timer: {fileID: 0}
+  victory: 0
+  victoryStuff: {fileID: 0}

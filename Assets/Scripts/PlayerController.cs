@@ -16,11 +16,13 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     public bool loss=false;
+    public gameManagerScript gameManager;
+    bool disappear=false;
 
     void Awake()
     {
         playerActionControl = new TwoPlayerActionControl();
-
+        gameManager=FindObjectOfType<gameManagerScript>();
         anim=GetComponent<Animator>();
     }
 
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
-        if(!loss){
+        if(!loss && !disappear){
             anim.SetBool("loss",false);
             if (PlayerNumber == 1)
             {
@@ -84,9 +86,14 @@ public class PlayerController : MonoBehaviour
             }else if(movementInput.x<0){
                 GetComponent<SpriteRenderer>().flipX=false;
             }
-        }else{
+        }else if (!disappear){
             anim.SetBool("loss",true);
             rb2d.velocity=Vector2.zero;
+        }else{
+            anim.SetBool("facingForward",true);
+            anim.SetBool("walking",false);
+            rb2d.velocity=Vector2.zero;
+            gameObject.GetComponent<SpriteRenderer>().color=new Color(1f,1f,1f,gameObject.GetComponent<SpriteRenderer>().color.a-0.05f);
         }
     }
 
@@ -127,9 +134,9 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other){
-        
-    }
-        
+        if(other.gameObject.tag=="sock") gameManager.victory=true;
+        disappear=true;
+    }    
 
 
 }
