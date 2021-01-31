@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 588727884759783002}
   - component: {fileID: 725490295656540092}
+  - component: {fileID: 39191792}
+  - component: {fileID: 39191794}
   m_Layer: 0
   m_Name: pathMakerSphere
   m_TagString: pathmaker
@@ -43,12 +45,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ad669d333664f49ad413fdb023eba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorPrefab: {fileID: 0}
-  pathmakerSpherePrefab: {fileID: 0}
+  floorPrefab: {fileID: 5714922130352631576, guid: 733c553333aae3340954beb18e2a90a9, type: 3}
+  pathmakerSpherePrefab: {fileID: 588727884759782981}
   staticFloor: 0
   maxTiles: 1000
-  turnProbability: 0.25
-  roomSize: 30
-  corridorSize: 20
+  turnProbability: 0.2
+  roomSize: 500
+  corridorSize: 10
   roomMode: 1
-  movementUnit: 0.1
+  movementUnit: 1.6
+--- !u!61 &39191792
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588727884759782981}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.030369878, y: 0.035431445}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.37235665, y: 0.40272665}
+  m_EdgeRadius: 0
+--- !u!114 &39191794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588727884759782981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412b551be8017ea44ae35820c1e1fb11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corner_bottomleft: {fileID: 3597940164495088715, guid: a15300209589ae4469b7fa4e3981c073, type: 3}
+  corner_bottomright: {fileID: 2161871812317786532, guid: 896c3eb843d6f124d9a3427186147163, type: 3}
+  corner_topright: {fileID: 1200946338721340751, guid: c8dc3b1c46b9044458e990f4008c12dc, type: 3}
+  corner_topleft: {fileID: 3482824780379225116, guid: 7cfa7f37da73cd146af2daaead814183, type: 3}
+  side_top: {fileID: 8043856525153769114, guid: b354f73988303224ca753f37fd40d7fb, type: 3}
+  side_left: {fileID: 1135008178272558097, guid: de44fc51210a4ce499f234708e0a426c, type: 3}
+  side_bottom: {fileID: 2061880473481701555, guid: ff9da4bd6e561f84bb49d3240ededa90, type: 3}
+  side_right: {fileID: 1866735344481381647, guid: 61ad07fa50d96b847930b172ba67f52f, type: 3}
+  bridge_horizontal: {fileID: 4264130458311293789, guid: 7608858f7ec970e448e77b50aa467c84, type: 3}
+  bridge_vertical: {fileID: 7798932213011375808, guid: 35177ea93f9568149b8db3c2a7e470c9, type: 3}
+  no_adjecent: {fileID: 7482065982183843445, guid: 85e808b554eb3f047b36927041694c35, type: 3}
+  middle1: {fileID: 7895260869391632729, guid: 12a66f63fe2d56e44918b9ecd4f8ed8c, type: 3}
+  middle2: {fileID: 8716156114304029523, guid: 309b959915c74864387a798d2297dc96, type: 3}
+  island_top: {fileID: 2752467457379846269, guid: 2afdac74c9e0e114fb9a5930ba01c56d, type: 3}
+  island_right: {fileID: 5629638087528859757, guid: f71e478ff3ef60b43b87c9cacbdbb026, type: 3}
+  island_left: {fileID: 6163495943726968069, guid: 8bf7c321fc9d8424e987b54f51cf5790, type: 3}
+  island_bot: {fileID: 1461068338002000492, guid: 808cec23bbc3a634eaf1f37f08cadfa0, type: 3}
+  out1: {fileID: 8279368198199721084, guid: 7614fdac1132ff24aaa5bb94b74afce3, type: 3}
+  names:
+  - {fileID: 4702767824387152842, guid: fef22f98e2a7bd441a70c3b1db8dc348, type: 3}
+  - {fileID: 7499126872312259408, guid: 4e027b11e40cddc48a8e33ca0452d249, type: 3}
+  - {fileID: 2997404678210519301, guid: 3babb72fa9d0f9b44afc06efc2e3bb9a, type: 3}
+  - {fileID: 2371237507901168664, guid: 09b95100093bade49b4228915aae3333, type: 3}
+  - {fileID: 8119248454132450412, guid: 21680309a5589874687c6f5ff6b09d1a, type: 3}
+  - {fileID: 5164212512693323304, guid: 425d67f01e18f91458150b6837cba9cf, type: 3}
+  startCheck: 0
