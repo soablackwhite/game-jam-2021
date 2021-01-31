@@ -6,6 +6,8 @@ TagManager:
   tags:
   - floorTile
   - pathmaker
+  - out
+  - sock
   layers:
   - Default
   - TransparentFX
