@@ -20,7 +20,7 @@ public class events : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("touched "+collision.gameObject.name);
+        //Debug.Log("touched "+collision.gameObject.name);
         if (collision.gameObject.name == "Square")
         {
             sqTouch = true;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 725490295656540092}
   m_Layer: 0
   m_Name: pathMakerSphere
-  m_TagString: Untagged
+  m_TagString: pathmaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

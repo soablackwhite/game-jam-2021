@@ -125,7 +125,12 @@ public class pathManager : MonoBehaviour {
 				endedSpheres++;
 			}
 		}else{
-			//Destroy(gameObject);
+            //Destroy(gameObject);
+            GameObject[] temp = GameObject.FindGameObjectsWithTag("pathmaker");
+            for (int i=0; i<temp.Length; i++)
+            {
+                temp[i].GetComponent<BoxCollider2D>().enabled = false;
+            }
 			gameObject.GetComponent<tileAssignment>().startCheck=true;
 		}
 
