@@ -88,18 +88,38 @@ public class PlayerController : MonoBehaviour
         print(playerActionControl.secondary.Get().actions[0]);
         if(PlayerNumber==1){
             for(int i=1;i<5;i++){
-                playerActionControl.main.Get().actions[0].ApplyBindingOverride(i,keys[i-1]);
+                playerActionControl.main.Get().actions[0].ApplyBindingOverride(i,"<Keyboard>/"+keys[i-1]);
             }
             print(playerActionControl.main.Get().actions[0]);
         }else if(PlayerNumber==2){
             for(int i=1;i<5;i++){
-                playerActionControl.secondary.Get().actions[0].ApplyBindingOverride(i,keys[i+3]);
+                playerActionControl.secondary.Get().actions[0].ApplyBindingOverride(i,"<Keyboard>/"+keys[i+3]);
             }
             print(playerActionControl.secondary.Get().actions[0]);
         }
-        
-        
     }
+        
+    public IEnumerator Shake(float duration, float magnitude){
+        Transform t=GetComponentInChildren<Camera>().gameObject.transform;
+        Vector3 originalPos = t.localPosition;
+
+        float elapsed = 0f;
+
+        while(elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            t.localPosition = new Vector3(x, y, originalPos.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        t.localPosition = originalPos;
+    }
+        
 
 
 }

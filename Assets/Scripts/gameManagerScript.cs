@@ -18,6 +18,7 @@ public class gameManagerScript : MonoBehaviour
 	private string[] keys={"w","s","a","d","upArrow","downArrow","leftArrow","rightArrow"};
 	public Image[] playerKeys;
 	public Sprite[] keySprites;
+	public Sprite questionSprite;
 
 
 	private bool CRrunning=false;
@@ -25,9 +26,21 @@ public class gameManagerScript : MonoBehaviour
 	private float alpha=0.5f;
 	private Color c;
 
+	public float timeLimit=60f;
+	public float preWashTime=5f;
+	public soundManagerScript soundManager;
+	public float currentTime;
+	float startTime;
+
+	public float shakeMagnitude=1f;
+
+	public Animator timer;
+
     // Start is called before the first frame update
     void Start()
     {
+    	soundManager=FindObjectOfType<soundManagerScript>();
+    	startTime=Time.time;
         washImage=washingMachine.GetComponent<Image>();
         
         washImage.enabled=false;
@@ -41,19 +54,26 @@ public class gameManagerScript : MonoBehaviour
         }
 
         c=new Color(1f,1f,1f,alpha);
+        timer.speed=1/timeLimit;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+    	currentTime=Time.time-startTime;
+
+
+    	if(Time.time>startTime+timeLimit-preWashTime && !CRrunning){
+    		doingTheWash();
+    	}
 
     	for(int i=0;i<8;i++){
     		playerKeys[i].color=c;
     	}
         var keyboard=Keyboard.current;
-        if(keyboard.spaceKey.wasPressedThisFrame && !CRrunning) doingTheWash();
-        if(keyboard.tKey.wasPressedThisFrame) print("key pressed");
+        // if(keyboard.spaceKey.wasPressedThisFrame && !CRrunning) doingTheWash();
+        // if(keyboard.tKey.wasPressedThisFrame) print("key pressed");
 
         for(int i=0;i<8;i++){
         	print(keys[i]);
@@ -76,26 +96,40 @@ public class gameManagerScript : MonoBehaviour
     void doingTheWash(){
     	StartCoroutine(machineAnimation(animationTime));
     	//change level layout
-    	RandomizeKeys();
+    	
     }
     
     IEnumerator machineAnimation(float waitTime){
     	CRrunning=true;
+    	soundManager.Wash();
+    	StartCoroutine(sock1.Shake(preWashTime,shakeMagnitude/10f));
+    	StartCoroutine(sock2.Shake(preWashTime,shakeMagnitude/10f));
+    	yield return new WaitForSeconds(preWashTime);
+    	StartCoroutine(sock1.Shake(animationTime,shakeMagnitude));
+    	StartCoroutine(sock2.Shake(animationTime,shakeMagnitude));
     	washImage.enabled=true;
     	rect.localScale=Vector3.zero;
     	var scale=rect.localScale;
-    	for(float i=0f;i<=waitTime*2/3;i+=Time.deltaTime){
+    	for(float i=0f;i<=waitTime*6/6;i+=Time.deltaTime){
     		scale=Vector3.Lerp(rect.localScale,new Vector3(maxSize,maxSize,maxSize),growthRate);
     		rect.localScale=scale;
     		yield return new WaitForSeconds(Time.deltaTime);
     	}
-    	for(float i=0f;i<=waitTime/3;i+=Time.deltaTime){
-    		scale=Vector3.Lerp(rect.localScale,Vector3.zero,growthRate*10);
-    		rect.localScale=scale;
-    		yield return new WaitForSeconds(Time.deltaTime);
-    	}
+    	RandomizeKeys();
+    	// for(float i=0f;i<=waitTime/6;i+=Time.deltaTime){
+    	// 	scale=Vector3.Lerp(rect.localScale,Vector3.zero,growthRate*10);
+    	// 	rect.localScale=scale;
+    	// 	yield return new WaitForSeconds(Time.deltaTime);
+    	// }
     	washImage.enabled=false;
     	CRrunning=false;
+    	soundManager.StopWash();
+    	startTime=Time.time;
+    	timer.Play("restart");
+    	timer.speed=1f;
+    	yield return new WaitForSeconds(1f);
+    	timer.speed=1/timeLimit;
+    	startTime=Time.time;
     }
 
     void RandomizeKeys(){
@@ -124,4 +158,6 @@ public class gameManagerScript : MonoBehaviour
              indexes.RemoveAt(0);
          }
      }
+
+
 }

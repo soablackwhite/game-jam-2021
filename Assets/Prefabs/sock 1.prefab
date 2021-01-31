@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 9015906665505578527}
   - component: {fileID: 1866548368}
   - component: {fileID: 1866548369}
-  - component: {fileID: 7730167903254817237}
   - component: {fileID: 1866548372}
   m_Layer: 0
   m_Name: sock 1
@@ -202,19 +201,6 @@ BoxCollider2D:
   m_Size: {x: 1.3210034, y: 0.2811924}
   m_EdgeRadius: 0
 --- !u!114 &1866548369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5276593955259291688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d2cd5671e5a2a44fbd0d42f1e0c488d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hehe: {fileID: 0}
---- !u!114 &7730167903254817237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
