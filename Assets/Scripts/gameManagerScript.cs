@@ -15,11 +15,15 @@ public class gameManagerScript : MonoBehaviour
 	private Image washImage;
 	private RectTransform rect;
 
-	public string[] keys={"<Keyboard>/w","<Keyboard>/s","<Keyboard>/a","<Keyboard>/d","<Keyboard>/upArrow","<Keyboard>/downArrow","<Keyboard>/leftArrow","<Keyboard>/rightArrow"};
+	private string[] keys={"w","s","a","d","upArrow","downArrow","leftArrow","rightArrow"};
 	public Image[] playerKeys;
 	public Sprite[] keySprites;
 
+
 	private bool CRrunning=false;
+
+	private float alpha=0.5f;
+	private Color c;
 
     // Start is called before the first frame update
     void Start()
@@ -35,14 +39,38 @@ public class gameManagerScript : MonoBehaviour
         for(int i=0;i<8;i++){
         	keySprites[i]=playerKeys[i].sprite;
         }
+
+        c=new Color(1f,1f,1f,alpha);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    	for(int i=0;i<8;i++){
+    		playerKeys[i].color=c;
+    	}
         var keyboard=Keyboard.current;
         if(keyboard.spaceKey.wasPressedThisFrame && !CRrunning) doingTheWash();
         if(keyboard.tKey.wasPressedThisFrame) print("key pressed");
+
+        for(int i=0;i<8;i++){
+        	print(keys[i]);
+        	if(keys[i].Length>1){
+        		if(keys[i]=="upArrow" && keyboard.upArrowKey.isPressed){
+        			playerKeys[i].color=Color.white;
+        		}else if(keys[i]=="downArrow" && keyboard.downArrowKey.isPressed){
+        			playerKeys[i].color=Color.white;
+        		}else if(keys[i]=="leftArrow" && keyboard.leftArrowKey.isPressed){
+        			playerKeys[i].color=Color.white;
+        		}else if(keys[i]=="rightArrow" && keyboard.rightArrowKey.isPressed){
+        			playerKeys[i].color=Color.white;
+        		}
+        	}else if(keyboard.FindKeyOnCurrentKeyboardLayout(keys[i]).isPressed){
+        		playerKeys[i].color=Color.white;
+        	}
+        }
     }
 
     void doingTheWash(){
