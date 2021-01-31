@@ -27,6 +27,8 @@ public class tileAssignment : MonoBehaviour
     public GameObject middle1;
     public GameObject middle2;
 
+    public bool startCheck=false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,20 +80,23 @@ public class tileAssignment : MonoBehaviour
     //
     //}
     // Update is called once per frame
+
     void Update()
     {
-        if (GameObject.Find("floor" + i) != null)
+        if (startCheck && GameObject.Find("floor" + i) != null)
         {
             
             obj1 = GameObject.Find("floor" + i);
-            float obj1x = obj1.GetComponent<Transform>().position.x;
-            float obj1y = obj1.GetComponent<Transform>().position.y;
-            Debug.Log("floor"+i+" |obj1x = " + obj1x + " | obj1y = " + obj1y);
+            //float obj1x = obj1.GetComponent<Transform>().position.x;
+            //float obj1y = obj1.GetComponent<Transform>().position.y;
+            float obj1x=obj1.GetComponent<BoxCollider2D>().bounds.center.x;
+            float obj1y=obj1.GetComponent<BoxCollider2D>().bounds.center.y;
+            //Debug.Log("floor"+i+" |obj1x = " + obj1x + " | obj1y = " + obj1y);
             
             Vector2 check = new Vector2(obj1x+1.6f, obj1y);
-            Debug.Log("Checking: "+check.x+" "+check.y);
+            //Debug.Log("Checking: "+check.x+" "+check.y);
             Collider2D temp = Physics2D.OverlapPoint(check);
-            Debug.Log("floor" + i + "|" + temp);
+            if(temp!=null) Debug.Log("floor" + i + "|" + temp);
             i++;
         }
         

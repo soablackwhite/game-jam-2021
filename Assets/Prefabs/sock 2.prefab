@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!61 &8536845
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738072606085958567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017359495, y: 0.052077293}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3106818, y: 1.1486628}
+  m_EdgeRadius: 0
+--- !u!114 &8536846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738072606085958567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2cd5671e5a2a44fbd0d42f1e0c488d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hehe: {fileID: 0}
 --- !u!1001 &5847051024193508239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +48,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5276593955259291688, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
       propertyPath: m_Name
-      value: sock 2
+      value: sock2
       objectReference: {fileID: 0}
     - target: {fileID: 5276593955259291692, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
       propertyPath: m_RootOrder
@@ -85,3 +124,8 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 675c5d628317b214aabfa793d9b13faf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
+--- !u!1 &1738072606085958567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5276593955259291688, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
+  m_PrefabInstance: {fileID: 5847051024193508239}
+  m_PrefabAsset: {fileID: 0}

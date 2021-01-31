@@ -126,6 +126,7 @@ public class pathManager : MonoBehaviour {
 			}
 		}else{
 			//Destroy(gameObject);
+			gameObject.GetComponent<tileAssignment>().startCheck=true;
 		}
 
 		//if(Input.GetKeyDown(KeyCode.R)){
