@@ -16,7 +16,8 @@ public class gameManagerScript : MonoBehaviour
 	private RectTransform rect;
 
 	public string[] keys={"<Keyboard>/w","<Keyboard>/s","<Keyboard>/a","<Keyboard>/d","<Keyboard>/upArrow","<Keyboard>/downArrow","<Keyboard>/leftArrow","<Keyboard>/rightArrow"};
-
+	public Image[] playerKeys;
+	public Sprite[] keySprites;
 
 	private bool CRrunning=false;
 
@@ -29,6 +30,11 @@ public class gameManagerScript : MonoBehaviour
 
         rect=washingMachine.GetComponent<RectTransform>();
         rect.localScale=new Vector3(0f,0f,0f);
+
+        keySprites=new Sprite[8];
+        for(int i=0;i<8;i++){
+        	keySprites[i]=playerKeys[i].sprite;
+        }
     }
 
     // Update is called once per frame
@@ -71,12 +77,23 @@ public class gameManagerScript : MonoBehaviour
     }
 
    	public void Shuffle() { //https://answers.unity.com/questions/1189736/im-trying-to-shuffle-an-arrays-order.html
-         string temp;
+         string tempString;
+         Sprite tempSprite;
+         List<int> indexes=new List<int>();
+         for (int k = 0; k < keys.Length; k++){
+         	indexes.Add(k);
+         }
          for (int k = 0; k < keys.Length; k++) {
-             int rnd = Random.Range(0, keys.Length);
-             temp = keys[rnd];
+             int l = Random.Range(0, indexes.Count);
+             int rnd=indexes[l];
+             tempString = keys[rnd];
              keys[rnd] = keys[k];
-             keys[k] = temp;
+             keys[k] = tempString;
+             tempSprite = keySprites[rnd];
+             keySprites[rnd] = keySprites[k];
+             keySprites[k] = tempSprite;
+             playerKeys[k].sprite=keySprites[k];
+             indexes.RemoveAt(0);
          }
      }
 }
