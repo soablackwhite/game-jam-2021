@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
  public class messageList
  {
@@ -31,7 +32,7 @@ public class textScript : MonoBehaviour
     public bool isNpc=true;
     string spokenMessage="";
     float lettersSpoken=0f;
-    float textSpeed;
+    public float textSpeed=0.2f;
     public bool resolved=false;
 
     void Awake()
@@ -41,7 +42,6 @@ public class textScript : MonoBehaviour
         canvas.enabled=true;
         canvas2.enabled=false;
         currentMessage=1;
-        textSpeed=0.1f;
         int i=0;
 
         //typingSound=canvas.GetComponent<AudioSource>().clip;
@@ -65,6 +65,8 @@ public class textScript : MonoBehaviour
     }
 
     public void UpdateText(){
+        var mouse=Mouse.current;
+        if(mouse.leftButton.wasPressedThisFrame) print("pressed");
         for(int i=0;i<changeSpeaker.Length;i++){
             if(changeSpeaker[i]==currentMessage){
                 if(canvas==canvas1){
@@ -85,8 +87,8 @@ public class textScript : MonoBehaviour
             }
         }
 
-        if(movementInput != playerActionControl.main.Move.ReadValue<Vector2>().x && playerActionControl.main.Move.ReadValue<Vector2>().x>0){
-        	if(lettersSpoken>=messages[currentMessage-1].Length){
+        if(mouse.leftButton.wasPressedThisFrame){
+        	if(lettersSpoken>=messages[currentMessage-1].Length && currentMessage<messages.Length){
 
             	currentMessage++;
                 lettersSpoken=0;
@@ -98,9 +100,12 @@ public class textScript : MonoBehaviour
             		canvas.enabled=false;
             	}
             	
+            }else if(currentMessage<messages.Length){
+                lettersSpoken=messages[currentMessage-1].Length;
+            }else{
+                canvas.enabled=false;
             }
         }
-        movementInput=playerActionControl.main.Move.ReadValue<Vector2>().x;
 
         if(messages.Length>0 && currentMessage>0){
             lettersSpoken+=textSpeed;
