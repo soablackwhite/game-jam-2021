@@ -128,13 +128,13 @@ public class pathManager : MonoBehaviour {
 			//Destroy(gameObject);
 		}
 
-		if(Input.GetKeyDown(KeyCode.R)){
-			floorNum=0;
-			origin=new Vector3(10f,10f,10f);
-			Scene scene = SceneManager.GetActiveScene(); 
-			SceneManager.LoadScene(scene.name);
-			print("r pressed");
-		}
+		//if(Input.GetKeyDown(KeyCode.R)){
+		//	floorNum=0;
+		//	origin=new Vector3(10f,10f,10f);
+		//	Scene scene = SceneManager.GetActiveScene(); 
+		//	SceneManager.LoadScene(scene.name);
+		//	print("r pressed");
+		//}
 	
 	}
 
