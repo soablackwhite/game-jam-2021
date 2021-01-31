@@ -71,10 +71,10 @@ public class pathManager : MonoBehaviour {
 			}else if(f<turnProbability*2f){
 				transform.Rotate(0,0,-90);
 			}else if(f>0.925f && f<1f){
-				GameObject newSphere;
-				newSphere=Instantiate(pathmakerSpherePrefab,transform.position,transform.rotation,transform.parent);
-				print("new sphere");
-				sphereNumber++;
+				// GameObject newSphere;
+				// newSphere=Instantiate(pathmakerSpherePrefab,transform.position,transform.rotation,transform.parent);
+				// print("new sphere");
+				// sphereNumber++;
 			}
 //			Instantiate a floorPrefab clone at current position;
 //			Move forward ("forward", as in, the direction I'm currently facing) by 5 units;

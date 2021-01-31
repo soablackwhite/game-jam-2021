@@ -134,8 +134,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other){
-        if(other.gameObject.tag=="sock") gameManager.victory=true;
-        disappear=true;
+        if(other.gameObject.tag=="sock"){
+            gameManager.victory=true;
+            disappear=true;
+        }
     }    
 
 
