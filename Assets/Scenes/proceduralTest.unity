@@ -184,6 +184,13 @@ MonoBehaviour:
   island_left: {fileID: 6163495943726968069, guid: 8bf7c321fc9d8424e987b54f51cf5790, type: 3}
   island_bot: {fileID: 1461068338002000492, guid: 808cec23bbc3a634eaf1f37f08cadfa0, type: 3}
   out1: {fileID: 8279368198199721084, guid: 7614fdac1132ff24aaa5bb94b74afce3, type: 3}
+  names:
+  - {fileID: 4702767824387152842, guid: fef22f98e2a7bd441a70c3b1db8dc348, type: 3}
+  - {fileID: 7499126872312259408, guid: 4e027b11e40cddc48a8e33ca0452d249, type: 3}
+  - {fileID: 2997404678210519301, guid: 3babb72fa9d0f9b44afc06efc2e3bb9a, type: 3}
+  - {fileID: 2371237507901168664, guid: 09b95100093bade49b4228915aae3333, type: 3}
+  - {fileID: 8119248454132450412, guid: 21680309a5589874687c6f5ff6b09d1a, type: 3}
+  - {fileID: 5164212512693323304, guid: 425d67f01e18f91458150b6837cba9cf, type: 3}
   startCheck: 0
 --- !u!1001 &551745085
 PrefabInstance:
@@ -194,7 +201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1738072606085958563, guid: 82741d8c10b61354ca73cb39c44d567c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1738072606085958563, guid: 82741d8c10b61354ca73cb39c44d567c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -263,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5276593955259291692, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5276593955259291692, guid: dd3e2fe5c7a37064581c83664dc9bab3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -418,7 +425,7 @@ Transform:
   m_Children:
   - {fileID: 2022730043}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105523233
 GameObject:
@@ -449,7 +456,7 @@ Transform:
   m_Children:
   - {fileID: 773981321}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1719420162
 GameObject:
@@ -646,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588727884759783002, guid: 12fc6054289b6d04195622e1cf54b567, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 588727884759783002, guid: 12fc6054289b6d04195622e1cf54b567, type: 3}
       propertyPath: m_LocalPosition.x

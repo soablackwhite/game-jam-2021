@@ -8,6 +8,7 @@ public class tileAssignment : MonoBehaviour
     int z = 0;
     int y = 0;
     int counter = 0;
+    int cnt = 1;
     GameObject obj1;
     GameObject obj2;
     bool done = true;
@@ -37,6 +38,7 @@ public class tileAssignment : MonoBehaviour
     public GameObject island_left;
     public GameObject island_bot;
     public GameObject out1;
+    public GameObject[] names;
 
     public bool startCheck=false;
 
@@ -86,11 +88,13 @@ public class tileAssignment : MonoBehaviour
             if (temp8 != null) bot = true;
             if (temp9 != null) botright = true;
 
-            Debug.Log("floor" + i + "| 1" + topleft + " 2" + top + " 3" + topright + " 4" + left + " 6" + right + " 7" + botleft + " 8" + bot + " 9" + botright);
+            //Debug.Log("floor" + i + "| 1" + topleft + " 2" + top + " 3" + topright + " 4" + left + " 6" + right + " 7" + botleft + " 8" + bot + " 9" + botright);
             if (top && right) obj1.GetComponent<SpriteRenderer>().sprite = corner_bottomleft.GetComponent<SpriteRenderer>().sprite;
             if (bot && left) obj1.GetComponent<SpriteRenderer>().sprite = corner_topright.GetComponent<SpriteRenderer>().sprite;
             if (top && left) obj1.GetComponent<SpriteRenderer>().sprite = corner_bottomright.GetComponent<SpriteRenderer>().sprite;
             if (bot && right) obj1.GetComponent<SpriteRenderer>().sprite = corner_topleft.GetComponent<SpriteRenderer>().sprite;
+            if (bot && top) obj1.GetComponent<SpriteRenderer>().sprite = bridge_vertical.GetComponent<SpriteRenderer>().sprite;
+            if (left && right) obj1.GetComponent<SpriteRenderer>().sprite = bridge_horizontal.GetComponent<SpriteRenderer>().sprite;
             if (left && right && bot) obj1.GetComponent<SpriteRenderer>().sprite = side_top.GetComponent<SpriteRenderer>().sprite;
             if (top && right && bot) obj1.GetComponent<SpriteRenderer>().sprite = side_left.GetComponent<SpriteRenderer>().sprite;
             if (left && top && bot) obj1.GetComponent<SpriteRenderer>().sprite = side_right.GetComponent<SpriteRenderer>().sprite;
@@ -192,6 +196,25 @@ public class tileAssignment : MonoBehaviour
             for (int x = 0; x < tmp1.Length; x++)
             {
                 tmp1[x].GetComponent<BoxCollider2D>().enabled = true;
+            }
+            GameObject[] tmp2 = GameObject.FindGameObjectsWithTag("floorTile");
+            for (int b = 0; b < tmp2.Length; b++)
+            {
+                if (cnt % 6 == 0)
+                {
+                    GameObject floor = GameObject.Find("floor" + b);
+                    float tempx = floor.GetComponent<BoxCollider2D>().bounds.center.x;
+                    float tempy = floor.GetComponent<BoxCollider2D>().bounds.center.y;
+                    Vector2 temporary = new Vector2(tempx, tempy);
+                    int randomIndex = Random.Range(0, 6);
+                    
+                    GameObject OBJ = Instantiate(names[randomIndex], new Vector3(temporary.x, temporary.y, 0), Quaternion.identity);
+                    cnt++;
+                }
+                else
+                {
+                    cnt++;
+                }
             }
         }
         
